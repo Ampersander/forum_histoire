@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'YosimitsoWorkingForumBundle' %}
+{% block title %}liste compte{% endblock %}
+{% block body %}
+
+        {% for msg in app.session.flashBag.get('success') %}
+            <div class="alert alert-success">
+                {{ msg }}
+            </div>
+        {% endfor %}
+
+        <h2 class="title_clear">Liste des Etudiant</h2>
+
+    <div class='d-flex'>
+            {% for  user in listeEtu %}
+                <div class="card mr-5" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ asset('/image/avatar/default.png')  }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ user.username }}</h5>
+                    <p>
+
+                        Nom :  <strong><a class="user_link" href="{{ path('show_prof', { 'id': user.id }) }}">{{ user.username }}</a></strong> <br/>
+                        <p class="card-text"> {{ user.description }}</p>
+                        Email : {{ user.email }} <br/>
+
+                    </p>
+                        <a href="{{ path('show_prof', { 'id': user.id }) }}" class="btn btn-primary">Show profil</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </br>
+        <h2 class="title_clear">Liste des Entreprise</h2>
+    </br>
+    <div class='d-flex'>
+            {% if listeEntr is not empty %}
+                {% for user in listeEntr %}
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ asset('/image/avatar/default.png')  }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ user.username }}</h5>
+                            <p>
+
+                                Nom :  <strong><a class="user_link" href="{{ path('show_prof', { 'id': user.id }) }}">{{ user.username }}</a></strong> <br/>
+                            <p class="card-text"> {{ user.description }}</p>
+                            Email : {{ user.email }} <br/>
+
+                            </p>
+                            <a href="{{ path('show_prof', { 'id': user.id }) }}" class="btn btn-primary">Show profil</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>
+                    Il n'y a actuellement pas d'utilisateur banni.
+                </p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
