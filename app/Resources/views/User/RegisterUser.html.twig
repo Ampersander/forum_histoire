@@ -13,7 +13,7 @@
     <div class="col-12 side-container">
         {{ form_start(form) }}
             <div class="head">
-                <h2>Création d'un étudiant</h2>
+                <h2>Création d'un User</h2>
             </div>
             <div class="body">
                 <div class="col-12 row">
@@ -70,11 +70,7 @@
                             </div>
                         </div>
                 </div>
-                <div class="form-group col-12">
-                    {{ form_label(form.description) }}
-                    {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
-                    {{ form_errors(form.description, {'attr': {'class': 'error'}}) }}
-                </div>
+        
             </div>
             <div class="foot">
                 {{ form_row(form.submit, {attr : {class : 'btn btn-primary btn-lg square'}}) }}

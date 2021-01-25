@@ -106,7 +106,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
 
         parent::__construct();
         $this->dateInscrip = date("Y-m-d H:i:s");
-        //$this->role = "ROLE_USER";
+        $this->role = "ROLE_USER";
         $this->imageName =  null;
         $this->userForum= new ForumUser($this);
         $this->status = "inconnu";
@@ -128,7 +128,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
 
         $this->role = $role;
         $this->roles=[$role,"ROLE_USER"];
-//        $this->addRole("ROLE_USER");
+        $this->addRole("ROLE_USER");
 
 
     
@@ -140,12 +140,12 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
     public function getRoles()
     {
         //['ROLE_ADMIN','ROLE_MODERATOR']
-//        echo $this->getRole();
+        echo $this->getRole();
 //        die;
         return [$this->getRole()];
 
 
-        //  return ['ROLE_ADMIN'];
+         // return ['ROLE_ADMIN'];
     }
 
     public function getSalt()

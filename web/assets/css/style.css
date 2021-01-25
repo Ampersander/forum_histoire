@@ -1,9 +1,10 @@
 @media screen and ( min-height: 768px ) {
     div.container-fluid {
-        padding-left: 200px;
-        padding-right: 200px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
+
 
 @media screen and ( max-height: 767px ) {
     div.container-fluid {
@@ -358,4 +359,8 @@ img.without-border {
 
 #mainNav {
     background-color: #002d59;
+}
+
+#wf_forum_content {
+    width: 95% !important;
 }

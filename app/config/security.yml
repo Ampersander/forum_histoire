@@ -34,4 +34,4 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/forum, roles: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/forum, roles: IS_AUTHENTICATED_ANONYMOUSLY } #IS_AUTHENTICATED_REMEMBERED

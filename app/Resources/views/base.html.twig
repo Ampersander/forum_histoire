@@ -9,7 +9,14 @@
     <meta name="author" content="">
 
     <title>Forum d'histoire</title>
-    <link rel="icon" href="{{ asset('assets/img/icon.ico') }}" />
+    <link rel="icon" href="{{ asset('assets/img/favicon/apple-touch-icon.png') }}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/img/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon/favicon-16x16.png') }}" >
+    <link rel="manifest" href="{{ asset('assets/img/favicon//site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('assets/img/favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Font Awesome Icons -->
     <link href="{{ asset('theme/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -35,8 +42,8 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-scrolled" id="mainNav">
             <div class="container-fluid">
-                <a class="navbar-brand js-scroll-trigger" href={{ path('homepage') }}>
-                    <img src="{{ asset('assets/img/upjv-b.jpeg') }}" width="40" height="40" alt="">
+                <a class="navbar-brand js-scroll-trigger" href={{ path('forum') }}>
+                    <img src="{{ asset('assets/img/logo.jpg') }}" width="40" height="40" alt="">
                     {% block title %}Accueil{% endblock title %}</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -44,12 +51,12 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         {% if app.user %}
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href={{ path('homepage') }}>Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href={{ path('forum') }}>Accueil</a></li>
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="" >Mon compte</a></li>
-                            <li  class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+                            <li  class="nav-item"><a class="nav-link js-scroll-trigger" href={{ path('fos_user_security_logout') }}>Déconnexion</a></li>
                         {% else %}
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ path('fos_user_security_login') }}">Connexion</a></li>
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ path('fos_user_register') }}">Creer un compte </a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href={{ path('fos_user_security_login') }}>Connexion</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href={{ path('fos_user_register') }}>Creer un compte </a></li>
                         {% endif %}
                     </ul>
                 </div>
