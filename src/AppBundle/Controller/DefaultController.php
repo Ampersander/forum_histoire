@@ -45,21 +45,41 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+       
         /** @var User $user */
         $user = $this->getUser();
-
+        
         if (is_null($user)) {
-            return $this->indexWithoutLogin();
+            return $this->redirectToRoute('forum');
         } elseif ($user->getRoles() == ['ROLE_USER']) {
             return $this->redirectToRoute('forum');
         } elseif ($user->getRoles() == ['ROLE_ADMIN'])  {
             return $this->redirectToRoute('forum');
         } elseif ($this->getAuthorization()->isGranted('ROLE_SUPER_ADMIN') )return $this->redirectToRoute('easyadmin');
         else {
-            return $this->indexWithoutLogin();
+            return $this->redirectToRoute('forum');
         }
         
     }
+
+
+ /**
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @Route("/test", name="test")
+     */
+    public function test(){
+    
+    return $this->render('default/index.html.twig');
+    }
+
+/**
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @Route("/", name="test")
+     */
+    public function test2(){
+    
+        return $this->render('@App/Security/login.html.twig');
+        }
 
     private function indexWithoutLogin() {
         return $this->render('@App/Security/select_home.html.twig');
@@ -108,7 +128,6 @@ class DefaultController extends Controller
         return $user;
     }
 
- 
 
 
 
@@ -183,8 +202,8 @@ class DefaultController extends Controller
         $entityManager = $this->getDoctrine()->getManager();
 
         $userManager = $this->get('fos_user.user_manager');
-        if (!$trach = $repUser->findOneByUsername('root'))
-            throw $this->createNotFoundException('il faudra cree un simple utilisateur du nom root poure le trash');
+        if (!$trach = $repUser->findOneByUsername('admin'))
+            throw $this->createNotFoundException('il faudra cree un simple utilisateur du nom admin poure le trash');
 
         $repositoryPoste = $entityManager->getRepository(Post::class);
         $repositoryVote = $entityManager->getRepository(PostVote::class);

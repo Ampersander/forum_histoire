@@ -54,6 +54,7 @@
                 <div class="wf_forum_content">
                     <ul style="list-style: inside decimal;">
                         <li><a href="{{ path('workingforum_admin_user') }}">{{ 'admin.users_list' | trans }}</a></li>
+                        <li><a href="{{ path('All_User') }}">{{ 'Liste des utilisateurs web' | trans }}</a></li>
                         <li>
                             <a href="{{ path('workingforum_admin_report') }}">{{ 'admin.reported_messages' | trans }}
                                 <span style="color: {% if newPostReported <= 0 %} green {% else %} red {% endif %}">

@@ -83,7 +83,7 @@ pagination:
     latestPage: Dernière page
 
 admin:
-    admin_workingforum: Administration de WorkingForum
+    admin_workingforum: Administration du Forum
     forum_name: Nom du forum
     list_subforum: Liste des sous-forums
     admin_area: Administration du forum
@@ -98,7 +98,7 @@ admin:
     back_to_admin: Retour à l'admin.
     back_to_forum: Retour au forum
     manage_users: Gestion des utilisateurs
-    users_list: Liste des utilisateurs
+    users_list: Liste des utilisateurs forum
     reported_messages: Messages signalés
     reported_by: Signalé par
     action: action

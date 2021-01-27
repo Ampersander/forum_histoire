@@ -29,6 +29,8 @@ easy_admin_bundle:
     resource: "@EasyAdminBundle/Controller/AdminController.php"
     type:     annotation
     prefix:   /admin
+
+
 #assets:install --symlink
 #yosimitso_working_forum:
  # resource: "@YosimitsoWorkingForumBundle/Resources/config/routing.yml"

@@ -386,6 +386,8 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      */
     public function getUserForum()
     {
+        if(is_string($this))
+            return null;
         return $this->userForum;
     }
 

@@ -49,6 +49,13 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      */
     private $nbVisite;
 
+    /**
+     * @ORM\Column(type="array")
+     *
+     * @var array
+     */
+    private $listeVisiteur;
+
 
     /**
      * @var int
@@ -73,6 +80,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      * */
     protected $status;
 
+    
 
     /**
      * Get id
@@ -108,6 +116,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
         $this->dateInscrip = date("Y-m-d H:i:s");
         $this->role = "ROLE_USER";
         $this->imageName =  null;
+        $this->listeVisiteur =  new ArrayCollection();
         $this->userForum= new ForumUser($this);
         $this->status = "inconnu";
         $this->enabled=true;
@@ -141,7 +150,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
     {
         //['ROLE_ADMIN','ROLE_MODERATOR']
         echo $this->getRole();
-//        die;
+   //        die;
         return [$this->getRole()];
 
 
@@ -386,6 +395,8 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      */
     public function getUserForum()
     {
+        if(is_string($this))
+            return null;
         return $this->userForum;
     }
 
@@ -489,8 +500,10 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
     }
 
     public function newVisite(User $idvis): int
-    {
-        if($this->getId()!=$idvis->getId())
+    { 
+        
+                 
+        if($this->getId() != $idvis->getId() && $this->listeVisiteur != false)
         {
             if(!$this->listeVisiteur->contains($idvis->getId()))
             {
@@ -503,7 +516,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
     /**
      * @param int $nbVisite
      */
-    public function setNbVisite(int $nbVisite): void
+     function setNbVisite(int $nbVisite): void
     {
         $this->nbVisite = $nbVisite;
     }
@@ -521,7 +534,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      * The return value will be casted to boolean if non-boolean was returned.
      * @since 5.0.0
      */
-    public function offsetExists($offset)
+     function offsetExists($offset)
     {
         // TODO: Implement offsetExists() method.
     }
@@ -535,7 +548,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      * @return mixed Can return all value types.
      * @since 5.0.0
      */
-    public function offsetGet($offset)
+     function offsetGet($offset)
     {
         // TODO: Implement offsetGet() method.
     }
@@ -552,7 +565,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      * @return void
      * @since 5.0.0
      */
-    public function offsetSet($offset, $value)
+     function offsetSet($offset, $value)
     {
         // TODO: Implement offsetSet() method.
     }
@@ -566,7 +579,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      * @return void
      * @since 5.0.0
      */
-    public function offsetUnset($offset)
+     function offsetUnset($offset)
     {
         // TODO: Implement offsetUnset() method.
     }
