@@ -2,7 +2,7 @@
 
 
 
-1/ forum_user
+**1/ forum_user**
 
 * GET
  ````txt
@@ -10,14 +10,14 @@
     http://localhost/api/forum_user/{id}
 ````
 
-2/ forum
+**2/ forum**
 
 * GET
  ````txt
      http://localhost/api/forum/
     http://localhost/api/forum/{id}
 ````
-3/ post
+**3/ post**
 
 * GET
  ````txt
@@ -29,8 +29,10 @@
      http://localhost/api/post/
 ````
 Content-type: application/x-www-form-urlencoded
+
 Content: labelThread=
-4/ sub_forum
+
+**4/ sub_forum**
 
 * GET
  ````txt
@@ -42,9 +44,10 @@ Content: labelThread=
      http://localhost/api/post/
 ````
 Content-type: application/x-www-form-urlencoded
+
 Content: nameForum=
 
-5/ thread
+**5/ thread**
 
 * GET
  ````txt
@@ -58,6 +61,7 @@ Content: nameForum=
 ````
 
 Content-type: application/x-www-form-urlencoded
+
 Content: nameSubforum=
 
 # Test API
