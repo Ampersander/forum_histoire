@@ -112,7 +112,7 @@ Il est également apprécié d'utiliser les paragraphes, la grammaire et la conj
 <strong>Pas d’usage abusif de majuscules</strong><br/>
 Merci de ne pas faire un usage abusif des majuscules dans les titres ou les messages car cela diminue de beaucoup la lisibilité de l’ensemble du Forum.
 
-Si vous avez besoin d’aide à l’utilisation de notre Forum ou en cas de plainte à propos d’une décision de l’administration, veuillez nous contacter par messagerie à l’adresse forumadmin@alco.com.");
+Si vous avez besoin d’aide à l’utilisation de notre Forum ou en cas de plainte à propos d’une décision de l’administration, veuillez nous contacter par messagerie à l’adresse forumadmin@hotmail.com.");
         $manager->persist($regle);
         $manager->persist($regle);
 

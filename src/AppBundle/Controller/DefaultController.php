@@ -78,7 +78,7 @@ class DefaultController extends Controller
      */
     public function test2(){
     
-        return $this->render('@App/Security/login.html.twig');
+        return $this->redirectToRoute('forum');
         }
 
     private function indexWithoutLogin() {
@@ -109,7 +109,7 @@ class DefaultController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($Etu);
             $entityManager->flush();
-            return $this->redirectToRoute('forum');
+            return $this->redirectToRoute('fos_user_security_login');
         }
 
         return $this->render('User/RegisterUser.html.twig', [

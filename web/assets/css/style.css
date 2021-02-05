@@ -364,3 +364,7 @@ img.without-border {
 #wf_forum_content {
     width: 95% !important;
 }
+
+.nav-link {
+    color: white !important;
+}

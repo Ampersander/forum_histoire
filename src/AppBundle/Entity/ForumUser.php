@@ -31,10 +31,6 @@ class ForumUser extends Yosimitso
      */
     protected $id;
 
-
-
-
-
     /**
      * ForumUser constructor.
      * @param monUtilisateur $userManager

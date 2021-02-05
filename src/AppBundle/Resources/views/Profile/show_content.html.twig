@@ -5,7 +5,7 @@
     {% if user.imageName is not empty %}
         <p><img id="photo_profil" src="{{ asset('/images/Avatar/'~user.imageName) }}" alt="photo de profil" width="100"/></p>
     {% else %}
-        <p><img id="photo_profil" src="{{ asset('/image/default.png') }}" alt="photo de profil" width="100"/></p>
+        <p><img id="photo_profil" src="{{ asset('/image/avatar/default.png') }}" alt="photo de profil" width="100"/></p>
     {% endif %}
 
     <p><strong>{{ 'profile.show.username'|trans }} :</strong> {{ user.username }}</p>

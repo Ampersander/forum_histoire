@@ -5,7 +5,7 @@
     <div class="head">
         <h2>Modification du profile {{ app.user.status }}</h2>
     </div>
-    <div class="body">
+    <div class="body ">
         <div class="col-12 row">
             <div class="col-6 upload">
                 <div class="col-12 px-0 title">
@@ -113,100 +113,7 @@
                 {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
                 {{ form_errors(form.description, {'attr': {'class': 'error'}}) }}
             </div>
-            {% if app.user.status == "ETUDIANT" %}
-            <div class="form-group col-12">
-                {{ form_label(form.competences) }}
-                <div class="d-flex">
-                    {{ form_widget(form.competences, {'attr': {'class': 'form-control select2'}}) }}
-                    <a href="#" data-toggle="modal" data-target="#modal-competence" class="btn btn-primary ml-1"
-                       style="width: 50px; font-weight: bold">+</a>
-                </div>
-                {{ form_errors(form.competences) }}
-            </div>
-            {% endif %}
-            {{ form_end(form) }}
-        </div>
-        <div class="foot">
-            {{ form_row(form2.submit, {attr : {class : 'btn btn-primary btn-lg square'}}) }}
-        </div>
-        {{ form_end(form2) }}
 
-    </div>
 
-    <div class="modal fade" id="modal-competence" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ajouter une nouvelle compétence</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Nom de la compétence</label>
-                            <input type="text" class="form-control" id="competence-name">
-                            <small class="help-block mt-2" id="error-new" style="display: none;"></small>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary" id="add-competence">Ajouter</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#appbundle_user_imageFile_file').change(function (e){
-                $('#file-name').text(e.target.value.substring(e.target.value.lastIndexOf('\\') + 1));
-            });
-
-            $('.upload-drop').click(function (){
-                $('#appbundle_user_imageFile_file').trigger('click');
-            })
-
-        });
-
-        $('#add-competence').click(function() {
-            $('#add-competence').attr("disabled", true);
-            $.post(
-                "{{ path('competences_new') }}",
-                {'title': $('input#competence-name').val()},
-                function (data) {
-                    data = JSON.parse(data);
-                    if (typeof data.id !== 'undefined'){
-                        $('#offre_competences').append('<option value="' + data.id + '">'
-                            + data.title + '</option>');
-                        $('#error-new').css('display','none');
-                        let select = $('.select2');
-                        select.trigger('change');
-                        let tmp = select.val();
-                        tmp.push(data.id);
-                        select.val(tmp).change();
-                        $('#modal-competence').modal('hide');
-                        $('input#competence-name').val('')
-                    } else {
-                        let error = $('#error-new');
-                        if (data.error === 'empty'){
-                            error.text("Veuillez entrer une valeur valide.");
-                        } else if (data.error === 'unique'){
-                            error.text("Cette compétence est déjà enregistrée.");
-                        }
-                        error.css('display','');
-                    }
-                    $('#add-competence').attr("disabled", false);
-                }
-            ).fail(function (e) {
-                let error = $('#error-new');
-                error.val("Une erreur inconnue est survenue.");
-                error.css('display','');
-                $('#add-competence').attr("disabled", false);
-            });
-        });
-    </script>
 
 {% endblock%}

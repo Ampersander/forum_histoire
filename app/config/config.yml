@@ -87,7 +87,7 @@ fos_user:
     firewall_name: main                      # Le nom du firewall derrière lequel on utilisera ces utilisateurs
     user_class:    AppBundle\Entity\User # La classe de l'entité User que nous utilisons
     from_email:
-        address: i.zitou1022@live.fr
+        address: romain-b49460@hotmail.com
         sender_name: zitou
   #  profile:
    #     form:

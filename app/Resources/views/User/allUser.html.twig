@@ -9,9 +9,9 @@
             </div>
         {% endfor %}
 
-        <h2 class="title_clear">Liste des User</h2>
-
-    <div class='d-flex'>
+<div class="d-flex flex-column " style="height: 200px;">
+  <div class=" p-2"><h2 class="title_clear d-flex justify-content-center">Liste des User</h2></div>
+    <div class='d-flex flex-wrap justify-content-center'>
             {% for  user in listeUser %}
                 <div class="card mr-5" style="width: 18rem;">
                     <img class="card-img-top" src="{{ asset('/image/avatar/default.png')  }}" alt="Card image cap">
@@ -28,6 +28,7 @@
                     </div>
                 </div>
             {% endfor %}
+        </div>
         </div>
     </div>
 {% endblock %}

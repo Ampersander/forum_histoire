@@ -54,13 +54,13 @@
 
                 <form action="{{ path("fos_user_security_check") }}" method="post">
 
-                    {% if error %}
+                     {% if error %}
                         <div class="mb-2">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
 
                     {% if csrf_token %}
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-                    {% endif %}
+                    {% endif %} 
 
                     <div class="form-group mb-2">
                         <label for="username">Identifiant</label>
@@ -108,17 +108,3 @@
 </html>
 
 
-{#{% block title %}  Connexion {% endblock %}#}
-{#{% block body %}#}
-{#    <h2 class="titre_principal">Connexion</h2>#}
-{#    <div id="content">#}
-{#        {% block fos_user_content %}#}
-{#            {{ include('@FOSUser/Security/login_content.html.twig') }}#}
-{#        {% endblock fos_user_content %}#}
-{#        <hr/>#}
-{#        <p><strong>Pas de compte ?</strong><br/>#}
-{#        <li><a href="{{ path('new_Student') }}">Creer un Compte Etudiant</a></li>#}
-{#        <li><a href="{{ path('new_Entreprise') }}">Creer un Compte Entreprise</a></li>#}
-{#        A bientôt !</p>#}
-{#    </div>#}
-{#{% endblock %}#}

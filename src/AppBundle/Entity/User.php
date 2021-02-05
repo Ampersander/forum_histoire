@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use ArrayAccess;
 use Doctrine\ORM\Mapping as ORM;
 
-
+//"@=service('security.token_storage').getToken().getUser().getUserForum()"
 
 
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -25,7 +25,7 @@ use FOS\UserBundle\Model\User as BaseUser;
  *     /**
 
  */
-class User extends BaseUser implements YomiInter ,  ArrayAccess
+class User extends BaseUser implements YomiInter,  ArrayAccess
 {
     /**
      * @var ForumUser
@@ -80,7 +80,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      * */
     protected $status;
 
-    
+
 
     /**
      * Get id
@@ -93,16 +93,6 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
     {
         return $this->id;
     }
-
-
- 
-
-
-    
-
-  
-
-
 
     /**
      * User constructor.
@@ -117,17 +107,16 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
         $this->role = "ROLE_USER";
         $this->imageName =  null;
         $this->listeVisiteur =  new ArrayCollection();
-        $this->userForum= new ForumUser($this);
+        $this->userForum = new ForumUser($this);
         $this->status = "inconnu";
-        $this->enabled=true;
-        $this->nbVisite=1;
+        $this->enabled = true;
+        $this->nbVisite = 1;
 
         $a = func_get_args();
         $i = func_num_args();
-        if (method_exists($this,$f='__construct'.$i)) {
-            call_user_func_array(array($this,$f),$a);
+        if (method_exists($this, $f = '__construct' . $i)) {
+            call_user_func_array(array($this, $f), $a);
         }
-
     }
 
     function __construct1(string $role)
@@ -136,12 +125,8 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
 
 
         $this->role = $role;
-        $this->roles=[$role,"ROLE_USER"];
+        $this->roles = [$role, "ROLE_USER"];
         $this->addRole("ROLE_USER");
-
-
-    
-
     }
 
 
@@ -150,16 +135,15 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
     {
         //['ROLE_ADMIN','ROLE_MODERATOR']
         echo $this->getRole();
-   //        die;
+        //        die;
         return [$this->getRole()];
 
 
-         // return ['ROLE_ADMIN'];
+        // return ['ROLE_ADMIN'];
     }
 
     public function getSalt()
     {
-
     }
 
 
@@ -383,6 +367,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      */
     public function setUserForum(\AppBundle\Entity\ForumUser $userForum = null)
     {
+
         $this->userForum = $userForum;
         $userForum->setUserManager($this);
         return $this;
@@ -395,8 +380,6 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      */
     public function getUserForum()
     {
-        if(is_string($this))
-            return null;
         return $this->userForum;
     }
 
@@ -448,7 +431,8 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
         return $this->getEmail();
     }
 
-    public function getLastReplyDate(){
+    public function getLastReplyDate()
+    {
         return $this->userForum->getLastReplyDate();
     }
 
@@ -473,15 +457,17 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
     }
 
 
-   
 
 
-    public function getStatus(){
+
+    public function getStatus()
+    {
         return $this->status;
     }
 
 
-    public function setStatus(String $sting){
+    public function setStatus(String $sting)
+    {
         $this->status = $sting;
     }
 
@@ -500,14 +486,12 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
     }
 
     public function newVisite(User $idvis): int
-    { 
-        
-                 
-        if($this->getId() != $idvis->getId() && $this->listeVisiteur != false)
-        {
-            if(!$this->listeVisiteur->contains($idvis->getId()))
-            {
-                $this->nbVisite+=1;
+    {
+
+
+        if ($this->getId() != $idvis->getId() && $this->listeVisiteur != false) {
+            if (!$this->listeVisiteur->contains($idvis->getId())) {
+                $this->nbVisite += 1;
                 $this->listeVisiteur->add($idvis->getId());
             }
         }
@@ -516,7 +500,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
     /**
      * @param int $nbVisite
      */
-     function setNbVisite(int $nbVisite): void
+    function setNbVisite(int $nbVisite): void
     {
         $this->nbVisite = $nbVisite;
     }
@@ -534,7 +518,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      * The return value will be casted to boolean if non-boolean was returned.
      * @since 5.0.0
      */
-     function offsetExists($offset)
+    function offsetExists($offset)
     {
         // TODO: Implement offsetExists() method.
     }
@@ -548,7 +532,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      * @return mixed Can return all value types.
      * @since 5.0.0
      */
-     function offsetGet($offset)
+    function offsetGet($offset)
     {
         // TODO: Implement offsetGet() method.
     }
@@ -565,7 +549,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      * @return void
      * @since 5.0.0
      */
-     function offsetSet($offset, $value)
+    function offsetSet($offset, $value)
     {
         // TODO: Implement offsetSet() method.
     }
@@ -579,7 +563,7 @@ class User extends BaseUser implements YomiInter ,  ArrayAccess
      * @return void
      * @since 5.0.0
      */
-     function offsetUnset($offset)
+    function offsetUnset($offset)
     {
         // TODO: Implement offsetUnset() method.
     }

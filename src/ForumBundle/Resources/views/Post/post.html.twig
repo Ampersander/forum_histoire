@@ -5,7 +5,7 @@
           {% if post.user.userManager.imageName is not empty %}
           {{ asset('/images/Avatar/'~post.user.userManager.imageName) }}
           {% else %}
-           {{ asset('/image/default.png') }}
+         {{ asset('/image/avatar/default.png')  }}
           {% endif %}
 
 
@@ -13,7 +13,7 @@
           "/>
         <p class="wf_username" id="wf_user{{ post.user.userManager.id }}"><a href="{{ path('show_prof', { 'id': post.user.id }) }}">{{ post.user.username }}</a></p>
         <p class="wf_message">{{ post.user.nbPost }} {{ 'forum.nbPost' | trans }}</p>
-        <p class="wf_message">{% if post.user.roles.0 is defined %} {{ (('forum.user.'~post.user.roles.0) | trans) }} {% else %} {{ ('forum.user.ROLE_USER' | trans) }}{% endif %}</p>
+        <p class="wf_message">{% if post.user.roles.0 == "ROLE_ADMIN Utilisateur" %}  {{ ('forum.user.ROLE_USER' | trans) }}{% endif %}</p>
     </div>
     <div class="wf_post-right{% if post.voteUp >= parameters.thresholdUsefulPost and post.moderateReason is empty %} wf_useful_post{% endif %}">
         <p class="wf_date">
