@@ -49,7 +49,7 @@ Il suffit de mettre cette adresse afin de récupérer tout les users du forum
 
 6/ lancer votre serveur :
 
-````bash````
+````bash
     php bin/console server:start 
 ````
 

@@ -82,29 +82,29 @@ Enjoy!
 Functionalities
 --------------
 
-#Connection Multi-User Admin, Member and Visitor (In future Moderator)
+* Connection Multi-User Admin, Member and Visitor (In future Moderator)
 
 The visitor have access of the entire forum but he can't post anything.
 The member can post an create new Thread.
 The administrator can manage user and forum by different Interface.
 
-#Creation of account
+* Creation of account
 
 A visitor can create a new account to have access of the forum.
 They need to inform different data like the username, mail and the password.
 The possibity to have an avatar is possible during process of the account creation.
 In the current version, it is not possible to change the image after the creation.
 
-#My account
+* My account
 
 All User can see the username, mail and the number of posts of their accounts.
 Also they can modify the username, mail and the password.
 
-#Search
+* Search
 
 The possibility to search a keyword in subForum subject had be implement.
 
-#Admin Interface
+* Admin Interface
 
 Administration du Forum(Réglages)
 
@@ -124,7 +124,7 @@ In the second interface, it is the bundle EasyAdmin with his interface with that
 
 In the third interface, we can handle the signalement of post and see the history.
 
-#Test
+* Test
 
 It is possible to install the extension to do the test, you need to import in the extension the file Test_Forum_Katalon.html
 
