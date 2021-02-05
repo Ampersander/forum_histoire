@@ -1,0 +1,24 @@
+RewriteEngine On # Activer le module Rewrite
+
+#Forum
+RewriteRule ^forum/?$ forum.php [NC,L]
+RewriteRule ^forum+/(\d+)$ forum.php?id=$1
+
+#Sub Forum
+RewriteRule ^subforum/?$ subforum.php [NC,L]
+RewriteRule ^subforum+/(\d+)$ subforum.php?id=$1
+
+
+#Thread
+RewriteRule ^thread/?$ thread.php [NC,L]
+RewriteRule ^thread+/(\d+)$ thread.php?id=$1
+
+#Post
+RewriteRule ^post/?$ post.php [NC,L]
+RewriteRule ^post+/(\d+)$ post.php?id=$1
+
+
+#Forum User
+RewriteRule ^forum_user/?$ forum_user.php [NC,L]
+RewriteRule ^forum_user+/(\d+)$ forum_user.php?id=$1
+

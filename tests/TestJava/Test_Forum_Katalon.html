@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>Test_Forum</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test_Visitor_Access_Thread</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8080/forum/<datalist><option>http://127.0.0.1:8080/forum/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Renaissance<datalist><option>link=Renaissance</option><option>//a[contains(text(),'Renaissance')]</option><option>//div[@id='wf_forum']/div/table/tbody/tr/td/a</option><option>//a[contains(@href, '/forum/view/histoire/comment')]</option><option>//td/a</option><option>css=td.wf_sub_name &gt; a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=dggfddgssgd<datalist><option>link=dggfddgssgd</option><option>//a[contains(text(),'dggfddgssgd')]</option><option>//div[@id='wf_forum']/div/table/tbody/tr[2]/td/p/a</option><option>//a[contains(@href, '/forum/view/histoire/comment/2-dggfddgssgd')]</option><option>//tr[2]/td/p/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//div[@id='wf_post[2]']/div[2]/div/p<datalist><option>//div[@id='wf_post[2]']/div[2]/div/p</option><option>//div[2]/div/div[2]/div/p</option><option>css=div.wf_post_content &gt; p</option></datalist></td><td></td>
+</tr>
+<tr><td>verifyText</td><td>//div[@id='wf_post[2]']/div[2]/div/p<datalist><option>//div[@id='wf_post[2]']/div[2]/div/p</option><option>//div[2]/div/div[2]/div/p</option><option>css=div.wf_post_content &gt; p</option></datalist></td><td>sfdgfdg</td>
+</tr>
+<tr><td>verifyText</td><td>//div[@id='wf_forum_content']/div[2]/div[9]/p<datalist><option>//div[@id='wf_forum_content']/div[2]/div[9]/p</option><option>//div[9]/p</option><option>css=p.wf_post_a_message</option></datalist></td><td>Vous devez être connecté pour pouvoir poster un message</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test_Visitor_Search</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8080/forum/<datalist><option>http://127.0.0.1:8080/forum/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Rechercher<datalist><option>link=Rechercher</option><option>//a[contains(text(),'Rechercher')]</option><option>//div[@id='wf_forum']/p/a</option><option>//a[contains(@href, '/forum/search')]</option><option>//p/a</option><option>css=a.wf_button</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=keywords<datalist><option>id=keywords</option><option>name=keywords</option><option>//input[@id='keywords']</option><option>//div[@id='wf_search']/form/p[2]/input</option><option>//input</option><option>css=#keywords</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=keywords<datalist><option>id=keywords</option><option>name=keywords</option><option>//input[@id='keywords']</option><option>//div[@id='wf_search']/form/p[2]/input</option><option>//input</option><option>css=#keywords</option></datalist></td><td>nav</td>
+</tr>
+<tr><td>addSelection</td><td>id=forum<datalist><option>id=forum</option><option>name=forum[]</option><option>//select[@id='forum']</option><option>//div[@id='wf_search']/form/p[4]/select</option><option>//select</option><option>css=#forum</option></datalist></td><td>label=Renaissance</td>
+</tr>
+<tr><td>click</td><td>//option[@value='1']<datalist><option>//option[@value='1']</option><option>//select[@id='forum']/optgroup/option</option><option>//option</option><option>css=option[value="1"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=submit<datalist><option>id=submit</option><option>name=submit</option><option>//button[@id='submit']</option><option>//div[@id='wf_search']/form/p[5]/button</option><option>//p[5]/button</option><option>css=#submit</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>link=Navigateurs<datalist><option>link=Navigateurs</option><option>//a[contains(text(),'Navigateurs')]</option><option>//div[@id='wf_forum']/div/table/tbody/tr/td/p/a</option><option>//a[contains(@href, '/forum/view/histoire/comment/4-navigateurs')]</option><option>//p/a</option><option>css=a.wf_label</option></datalist></td><td>Navigateurs</td>
+</tr>
+<tr><td>click</td><td>link=Navigateurs<datalist><option>link=Navigateurs</option><option>//a[contains(text(),'Navigateurs')]</option><option>//div[@id='wf_forum']/div/table/tbody/tr/td/p/a</option><option>//a[contains(@href, '/forum/view/histoire/comment/4-navigateurs')]</option><option>//p/a</option><option>css=a.wf_label</option></datalist></td><td></td>
+</tr>
+<tr><td>verifyText</td><td>//div[@id='wf_post[11]']/div[2]/div/p<datalist><option>//div[@id='wf_post[11]']/div[2]/div/p</option><option>//div[2]/div/div[2]/div/p</option><option>css=div.wf_post_content &gt; p</option></datalist></td><td>Au XVIe siècle, le Portugal continue les explorations (Cabral). Les autres grands navigateurs Christophe Colomb, Amerigo Vespucci (voir paragraphe et article détaillé grandes découvertes…) permettent aux puissances ibériques (Portugal et Espagne) d'étendre leur puissance et de chercher de nouvelles voies maritimes pour les épices, la principale route des épices exploitée par les Ottomans étant coupée depuis la chute de Constantinople.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test_Visitor_Connexion</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8080/forum/<datalist><option>http://127.0.0.1:8080/forum/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Connexion<datalist><option>link=Connexion</option><option>//a[contains(text(),'Connexion')]</option><option>//div[@id='navbarResponsive']/ul/li/a</option><option>//a[contains(@href, '/login')]</option><option>//li/a</option><option>css=a.nav-link.js-scroll-trigger</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td>test20</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td>test20</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//nav[@id='mainNav']/div/a<datalist><option>//nav[@id='mainNav']/div/a</option><option>//a[contains(@href, '/forum')]</option><option>//a</option><option>css=a.navbar-brand.js-scroll-trigger</option></datalist></td><td>Forum - test20</td>
+</tr>
+<tr><td>click</td><td>link=Déconnexion<datalist><option>link=Déconnexion</option><option>//a[contains(text(),'Déconnexion')]</option><option>//div[@id='navbarResponsive']/ul/li[3]/a</option><option>//a[contains(@href, '/logout')]</option><option>//li[3]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Retour<datalist><option>link=Retour</option><option>//a[contains(text(),'Retour')]</option><option>//a[contains(@href, '/forum')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>link=Connexion<datalist><option>link=Connexion</option><option>//a[contains(text(),'Connexion')]</option><option>//div[@id='navbarResponsive']/ul/li/a</option><option>//a[contains(@href, '/login')]</option><option>//li/a</option><option>css=a.nav-link.js-scroll-trigger</option></datalist></td><td>Connexion</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test_Visitor_Create_Account</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8080/forum/<datalist><option>http://127.0.0.1:8080/forum/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Creer un compte<datalist><option>link=Creer un compte</option><option>//a[contains(text(),'Creer un compte')]</option><option>//div[@id='navbarResponsive']/ul/li[2]/a</option><option>//a[contains(@href, '/registera')]</option><option>//li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=appbundle_user_email<datalist><option>id=appbundle_user_email</option><option>name=appbundle_user[email]</option><option>//input[@id='appbundle_user_email']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div/input</option><option>//div[2]/div/input</option><option>css=#appbundle_user_email</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=appbundle_user_email<datalist><option>id=appbundle_user_email</option><option>name=appbundle_user[email]</option><option>//input[@id='appbundle_user_email']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div/input</option><option>//div[2]/div/input</option><option>css=#appbundle_user_email</option></datalist></td><td>test2003@gmail.com</td>
+</tr>
+<tr><td>click</td><td>id=appbundle_user_username<datalist><option>id=appbundle_user_username</option><option>name=appbundle_user[username]</option><option>//input[@id='appbundle_user_username']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[2]/input</option><option>//div[2]/input</option><option>css=#appbundle_user_username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=appbundle_user_username<datalist><option>id=appbundle_user_username</option><option>name=appbundle_user[username]</option><option>//input[@id='appbundle_user_username']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[2]/input</option><option>//div[2]/input</option><option>css=#appbundle_user_username</option></datalist></td><td>test2003</td>
+</tr>
+<tr><td>click</td><td>id=appbundle_user_plainPassword_first<datalist><option>id=appbundle_user_plainPassword_first</option><option>name=appbundle_user[plainPassword][first]</option><option>//input[@id='appbundle_user_plainPassword_first']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[3]/input</option><option>//div[3]/input</option><option>css=#appbundle_user_plainPassword_first</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=appbundle_user_plainPassword_first<datalist><option>id=appbundle_user_plainPassword_first</option><option>name=appbundle_user[plainPassword][first]</option><option>//input[@id='appbundle_user_plainPassword_first']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[3]/input</option><option>//div[3]/input</option><option>css=#appbundle_user_plainPassword_first</option></datalist></td><td>test2003</td>
+</tr>
+<tr><td>click</td><td>id=appbundle_user_plainPassword_second<datalist><option>id=appbundle_user_plainPassword_second</option><option>name=appbundle_user[plainPassword][second]</option><option>//input[@id='appbundle_user_plainPassword_second']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[4]/input</option><option>//div[4]/input</option><option>css=#appbundle_user_plainPassword_second</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=appbundle_user_plainPassword_second<datalist><option>id=appbundle_user_plainPassword_second</option><option>name=appbundle_user[plainPassword][second]</option><option>//input[@id='appbundle_user_plainPassword_second']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[4]/input</option><option>//div[4]/input</option><option>css=#appbundle_user_plainPassword_second</option></datalist></td><td>test2003</td>
+</tr>
+<tr><td>click</td><td>id=appbundle_user_submit<datalist><option>id=appbundle_user_submit</option><option>name=appbundle_user[submit]</option><option>//button[@id='appbundle_user_submit']</option><option>//body[@id='page-top']/div/div/form/div[3]/div/button</option><option>//div[3]/div/button</option><option>css=#appbundle_user_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td>test2003</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td>test2003</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//nav[@id='mainNav']/div/a<datalist><option>//nav[@id='mainNav']/div/a</option><option>//a[contains(@href, '/forum')]</option><option>//a</option><option>css=a.navbar-brand.js-scroll-trigger</option></datalist></td><td>Forum - test2003</td>
+</tr>
+<tr><td>click</td><td>link=Déconnexion<datalist><option>link=Déconnexion</option><option>//a[contains(text(),'Déconnexion')]</option><option>//div[@id='navbarResponsive']/ul/li[3]/a</option><option>//a[contains(@href, '/logout')]</option><option>//li[3]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Retour<datalist><option>link=Retour</option><option>//a[contains(text(),'Retour')]</option><option>//a[contains(@href, '/forum')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>link=Connexion<datalist><option>link=Connexion</option><option>//a[contains(text(),'Connexion')]</option><option>//div[@id='navbarResponsive']/ul/li/a</option><option>//a[contains(@href, '/login')]</option><option>//li/a</option><option>css=a.nav-link.js-scroll-trigger</option></datalist></td><td>Connexion</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test_Member_Add_New_Thread</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8080/login<datalist><option>http://127.0.0.1:8080/login</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td>test2000</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td>test2000</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//nav[@id='mainNav']/div/a<datalist><option>//nav[@id='mainNav']/div/a</option><option>//a[contains(@href, '/forum')]</option><option>//a</option><option>css=a.navbar-brand.js-scroll-trigger</option></datalist></td><td>Forum - test2000</td>
+</tr>
+<tr><td>click</td><td>link=Renaissance<datalist><option>link=Renaissance</option><option>//a[contains(text(),'Renaissance')]</option><option>//div[@id='wf_forum']/div/table/tbody/tr/td/a</option><option>//a[contains(@href, '/forum/view/histoire/comment')]</option><option>//td/a</option><option>css=td.wf_sub_name &gt; a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Nouveau sujet<datalist><option>link=Nouveau sujet</option><option>//a[contains(text(),'Nouveau sujet')]</option><option>//div[@id='wf_forum_content']/div[2]/a</option><option>//a[contains(@href, '/forum/newthread/histoire/comment')]</option><option>//div[2]/a</option><option>css=a.wf_button.wf_add</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=thread_label<datalist><option>id=thread_label</option><option>name=thread[label]</option><option>//input[@id='thread_label']</option><option>//div[@id='wf_forum_content']/div[2]/div/form/p[2]/input</option><option>//input</option><option>css=#thread_label</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=thread_label<datalist><option>id=thread_label</option><option>name=thread[label]</option><option>//input[@id='thread_label']</option><option>//div[@id='wf_forum_content']/div[2]/div/form/p[2]/input</option><option>//input</option><option>css=#thread_label</option></datalist></td><td>Ceci est un test</td>
+</tr>
+<tr><td>click</td><td>id=thread_sublabel<datalist><option>id=thread_sublabel</option><option>name=thread[sublabel]</option><option>//input[@id='thread_sublabel']</option><option>//div[@id='wf_forum_content']/div[2]/div/form/p[4]/input</option><option>//p[4]/input</option><option>css=#thread_sublabel</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=thread_sublabel<datalist><option>id=thread_sublabel</option><option>name=thread[sublabel]</option><option>//input[@id='thread_sublabel']</option><option>//div[@id='wf_forum_content']/div[2]/div/form/p[4]/input</option><option>//p[4]/input</option><option>css=#thread_sublabel</option></datalist></td><td>test</td>
+</tr>
+<tr><td>click</td><td>id=thread_post_0_content<datalist><option>id=thread_post_0_content</option><option>name=thread[post][0][content]</option><option>//textarea[@id='thread_post_0_content']</option><option>//div[@id='1612510736433']/textarea</option><option>//textarea</option><option>css=#thread_post_0_content</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=thread_post_0_content<datalist><option>id=thread_post_0_content</option><option>name=thread[post][0][content]</option><option>//textarea[@id='thread_post_0_content']</option><option>//div[@id='1612510736433']/textarea</option><option>//textarea</option><option>css=#thread_post_0_content</option></datalist></td><td>Ceci est un test</td>
+</tr>
+<tr><td>click</td><td>id=wf_submit_post_editor<datalist><option>id=wf_submit_post_editor</option><option>//input[@id='wf_submit_post_editor']</option><option>//div[@id='wf_new_post']/p[3]/input</option><option>//p[3]/input</option><option>css=#wf_submit_post_editor</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='wf_forum_content']/div[3]/h1<datalist><option>//div[@id='wf_forum_content']/div[3]/h1</option><option>//h1</option><option>css=h1</option></datalist></td><td>Ceci est un test</td>
+</tr>
+<tr><td>assertText</td><td>link=test2000<datalist><option>link=test2000</option><option>//a[contains(text(),'test2000')]</option><option>//p[@id='wf_user24']/a</option><option>//a[contains(@href, '/profile/show_prof/24')]</option><option>//div[3]/div/div/p/a</option><option>css=#wf_user24 &gt; a</option></datalist></td><td>test2000</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='wf_forum_content']/div/ul/li<datalist><option>//div[@id='wf_forum_content']/div/ul/li</option><option>//div/div/div/ul/li</option><option>css=div.alert-success &gt; ul &gt; li</option></datalist></td><td>Votre sujet a été créé</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test_Member_Add_New_Post</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8080/login<datalist><option>http://127.0.0.1:8080/login</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td>test2000</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td>test2000</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Renaissance<datalist><option>link=Renaissance</option><option>//a[contains(text(),'Renaissance')]</option><option>//div[@id='wf_forum']/div/table/tbody/tr/td/a</option><option>//a[contains(@href, '/forum/view/histoire/comment')]</option><option>//td/a</option><option>css=td.wf_sub_name &gt; a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Ceci est un test<datalist><option>link=Ceci est un test</option><option>//a[contains(text(),'Ceci est un test')]</option><option>//div[@id='wf_forum']/div/table/tbody/tr/td/p/a</option><option>//a[contains(@href, '/forum/view/histoire/comment/9-ceci-est-un-test')]</option><option>//p/a</option><option>css=a.wf_label</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=post_content<datalist><option>id=post_content</option><option>name=post[content]</option><option>//textarea[@id='post_content']</option><option>//div[@id='1612510991580']/textarea</option><option>//textarea</option><option>css=#post_content</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=post_content<datalist><option>id=post_content</option><option>name=post[content]</option><option>//textarea[@id='post_content']</option><option>//div[@id='1612510991580']/textarea</option><option>//textarea</option><option>css=#post_content</option></datalist></td><td>test member add new post</td>
+</tr>
+<tr><td>click</td><td>id=wf_submit_post_editor<datalist><option>id=wf_submit_post_editor</option><option>//input[@id='wf_submit_post_editor']</option><option>//div[@id='wf_new_post']/p[4]/input</option><option>//p[4]/input</option><option>css=#wf_submit_post_editor</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='wf_forum_content']/div/ul/li<datalist><option>//div[@id='wf_forum_content']/div/ul/li</option><option>//div/div/div/ul/li</option><option>css=div.alert-success &gt; ul &gt; li</option></datalist></td><td>Message posté</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='wf_post[19]']/div[2]/div/p<datalist><option>//div[@id='wf_post[19]']/div[2]/div/p</option><option>//div[2]/div[2]/div/p</option></datalist></td><td>test member add new post</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test_Member_Search</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8080/login<datalist><option>http://127.0.0.1:8080/login</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td>test2000</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td>test2000</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Rechercher<datalist><option>link=Rechercher</option><option>//a[contains(text(),'Rechercher')]</option><option>//div[@id='wf_forum']/p/a</option><option>//a[contains(@href, '/forum/search')]</option><option>//p/a</option><option>css=a.wf_button</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=keywords<datalist><option>id=keywords</option><option>name=keywords</option><option>//input[@id='keywords']</option><option>//div[@id='wf_search']/form/p[2]/input</option><option>//input</option><option>css=#keywords</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=keywords<datalist><option>id=keywords</option><option>name=keywords</option><option>//input[@id='keywords']</option><option>//div[@id='wf_search']/form/p[2]/input</option><option>//input</option><option>css=#keywords</option></datalist></td><td>test</td>
+</tr>
+<tr><td>addSelection</td><td>id=forum<datalist><option>id=forum</option><option>name=forum[]</option><option>//select[@id='forum']</option><option>//div[@id='wf_search']/form/p[4]/select</option><option>//select</option><option>css=#forum</option></datalist></td><td>label=Renaissance</td>
+</tr>
+<tr><td>click</td><td>//option[@value='1']<datalist><option>//option[@value='1']</option><option>//select[@id='forum']/optgroup/option</option><option>//option</option><option>css=option[value="1"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=submit<datalist><option>id=submit</option><option>name=submit</option><option>//button[@id='submit']</option><option>//div[@id='wf_search']/form/p[5]/button</option><option>//p[5]/button</option><option>css=#submit</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='wf_forum']/div/h1<datalist><option>//div[@id='wf_forum']/div/h1</option><option>//h1</option><option>css=h1</option></datalist></td><td>Résultats pour "test"</td>
+</tr>
+<tr><td>assertText</td><td>link=dggfddgssgd<datalist><option>link=dggfddgssgd</option><option>//a[contains(text(),'dggfddgssgd')]</option><option>//div[@id='wf_forum']/div/table/tbody/tr/td/p/a</option><option>//a[contains(@href, '/forum/view/histoire/comment/2-dggfddgssgd')]</option><option>//p/a</option><option>css=a.wf_label</option></datalist></td><td>dggfddgssgd</td>
+</tr>
+<tr><td>assertText</td><td>link=Navigateurs<datalist><option>link=Navigateurs</option><option>//a[contains(text(),'Navigateurs')]</option><option>//div[@id='wf_forum']/div/table/tbody/tr[2]/td/p/a</option><option>//a[contains(@href, '/forum/view/histoire/comment/4-navigateurs')]</option><option>//tr[2]/td/p/a</option></datalist></td><td>Navigateurs</td>
+</tr>
+<tr><td>assertText</td><td>link=Ceci est un test<datalist><option>link=Ceci est un test</option><option>//a[contains(text(),'Ceci est un test')]</option><option>//div[@id='wf_forum']/div/table/tbody/tr[3]/td/p/a</option><option>//a[contains(@href, '/forum/view/histoire/comment/8-ceci-est-un-test')]</option><option>//tr[3]/td/p/a</option></datalist></td><td>Ceci est un test</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(//a[contains(text(),'Ceci est un test')])[2]<datalist><option>xpath=(//a[contains(text(),'Ceci est un test')])[2]</option><option>//div[@id='wf_forum']/div/table/tbody/tr[4]/td/p/a</option><option>//a[contains(@href, '/forum/view/histoire/comment/9-ceci-est-un-test')]</option><option>//tr[4]/td/p/a</option></datalist></td><td>Ceci est un test</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test_Member_My_Profile_Change_UserName_Mail_Password_And_Invalid_Connexion</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8080/login<datalist><option>http://127.0.0.1:8080/login</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Mon compte<datalist><option>link=Mon compte</option><option>//a[contains(text(),'Mon compte')]</option><option>//div[@id='navbarResponsive']/ul/li[2]/a</option><option>//a[contains(@href, '/profile/')]</option><option>//li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/strong<datalist><option>//div[@id='content']/strong</option><option>//strong</option><option>css=strong</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div/p[2]<datalist><option>//div[@id='content']/div/p[2]</option><option>//p[2]</option></datalist></td><td>Nom d'utilisateur : test26</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div/p[3]<datalist><option>//div[@id='content']/div/p[3]</option><option>//p[3]</option></datalist></td><td>Adresse e-mail : test26@hotmail.com</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div/p[4]<datalist><option>//div[@id='content']/div/p[4]</option><option>//p[4]</option></datalist></td><td>Nombre de Posts : L'utilisateur n'a pas encore écrit de post.</td>
+</tr>
+<tr><td>click</td><td>link=Modifier mon profil<datalist><option>link=Modifier mon profil</option><option>//a[contains(text(),'Modifier mon profil')]</option><option>//div[@id='content']/div/a</option><option>//a[contains(@href, '/profile/edit')]</option><option>//div/div/a</option><option>css=a.class_button</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=fos_user_profile_form_username<datalist><option>id=fos_user_profile_form_username</option><option>name=fos_user_profile_form[username]</option><option>//input[@id='fos_user_profile_form_username']</option><option>//div[@id='fos_user_profile_form']/div/input</option><option>//input</option><option>css=#fos_user_profile_form_username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_profile_form_username<datalist><option>id=fos_user_profile_form_username</option><option>name=fos_user_profile_form[username]</option><option>//input[@id='fos_user_profile_form_username']</option><option>//div[@id='fos_user_profile_form']/div/input</option><option>//input</option><option>css=#fos_user_profile_form_username</option></datalist></td><td>test266</td>
+</tr>
+<tr><td>click</td><td>id=fos_user_profile_form_email<datalist><option>id=fos_user_profile_form_email</option><option>name=fos_user_profile_form[email]</option><option>//input[@id='fos_user_profile_form_email']</option><option>//div[@id='fos_user_profile_form']/div[2]/input</option><option>//div/div[2]/input</option><option>css=#fos_user_profile_form_email</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_profile_form_email<datalist><option>id=fos_user_profile_form_email</option><option>name=fos_user_profile_form[email]</option><option>//input[@id='fos_user_profile_form_email']</option><option>//div[@id='fos_user_profile_form']/div[2]/input</option><option>//div/div[2]/input</option><option>css=#fos_user_profile_form_email</option></datalist></td><td>test266@hotmail.com</td>
+</tr>
+<tr><td>click</td><td>id=fos_user_profile_form_current_password<datalist><option>id=fos_user_profile_form_current_password</option><option>name=fos_user_profile_form[current_password]</option><option>//input[@id='fos_user_profile_form_current_password']</option><option>//div[@id='fos_user_profile_form']/div[3]/input</option><option>//div[3]/input</option><option>css=#fos_user_profile_form_current_password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_profile_form_current_password<datalist><option>id=fos_user_profile_form_current_password</option><option>name=fos_user_profile_form[current_password]</option><option>//input[@id='fos_user_profile_form_current_password']</option><option>//div[@id='fos_user_profile_form']/div[3]/input</option><option>//div[3]/input</option><option>css=#fos_user_profile_form_current_password</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>click</td><td>id=edit_prof_submit<datalist><option>id=edit_prof_submit</option><option>//input[@id='edit_prof_submit']</option><option>//div[@id='content']/form/div[2]/input</option><option>//div[2]/input</option><option>css=#edit_prof_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div<datalist><option>//div[@id='content']/div</option><option>//div/div/div</option><option>css=div.alert.alert-success</option></datalist></td><td>Le profil a été mis à jour.</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/strong<datalist><option>//div[@id='content']/strong</option><option>//strong</option><option>css=strong</option></datalist></td><td>test266</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div[2]/p[2]<datalist><option>//div[@id='content']/div[2]/p[2]</option><option>//p[2]</option></datalist></td><td>Nom d'utilisateur : test266</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div[2]/p[3]<datalist><option>//div[@id='content']/div[2]/p[3]</option><option>//p[3]</option></datalist></td><td>Adresse e-mail : test266@hotmail.com</td>
+</tr>
+<tr><td>click</td><td>link=Modifier mon profil<datalist><option>link=Modifier mon profil</option><option>//a[contains(text(),'Modifier mon profil')]</option><option>//div[@id='content']/div[2]/a</option><option>//a[contains(@href, '/profile/edit')]</option><option>//div[2]/a</option><option>css=a.class_button</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=fos_user_profile_form_username<datalist><option>id=fos_user_profile_form_username</option><option>name=fos_user_profile_form[username]</option><option>//input[@id='fos_user_profile_form_username']</option><option>//div[@id='fos_user_profile_form']/div/input</option><option>//input</option><option>css=#fos_user_profile_form_username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_profile_form_username<datalist><option>id=fos_user_profile_form_username</option><option>name=fos_user_profile_form[username]</option><option>//input[@id='fos_user_profile_form_username']</option><option>//div[@id='fos_user_profile_form']/div/input</option><option>//input</option><option>css=#fos_user_profile_form_username</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>click</td><td>id=fos_user_profile_form_email<datalist><option>id=fos_user_profile_form_email</option><option>name=fos_user_profile_form[email]</option><option>//input[@id='fos_user_profile_form_email']</option><option>//div[@id='fos_user_profile_form']/div[2]/input</option><option>//div/div[2]/input</option><option>css=#fos_user_profile_form_email</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=fos_user_profile_form_email<datalist><option>id=fos_user_profile_form_email</option><option>name=fos_user_profile_form[email]</option><option>//input[@id='fos_user_profile_form_email']</option><option>//div[@id='fos_user_profile_form']/div[2]/input</option><option>//div/div[2]/input</option><option>css=#fos_user_profile_form_email</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_profile_form_email<datalist><option>id=fos_user_profile_form_email</option><option>name=fos_user_profile_form[email]</option><option>//input[@id='fos_user_profile_form_email']</option><option>//div[@id='fos_user_profile_form']/div[2]/input</option><option>//div/div[2]/input</option><option>css=#fos_user_profile_form_email</option></datalist></td><td>test26@hotmail.com</td>
+</tr>
+<tr><td>click</td><td>id=fos_user_profile_form_current_password<datalist><option>id=fos_user_profile_form_current_password</option><option>name=fos_user_profile_form[current_password]</option><option>//input[@id='fos_user_profile_form_current_password']</option><option>//div[@id='fos_user_profile_form']/div[3]/input</option><option>//div[3]/input</option><option>css=#fos_user_profile_form_current_password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_profile_form_current_password<datalist><option>id=fos_user_profile_form_current_password</option><option>name=fos_user_profile_form[current_password]</option><option>//input[@id='fos_user_profile_form_current_password']</option><option>//div[@id='fos_user_profile_form']/div[3]/input</option><option>//div[3]/input</option><option>css=#fos_user_profile_form_current_password</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>click</td><td>id=edit_prof_submit<datalist><option>id=edit_prof_submit</option><option>//input[@id='edit_prof_submit']</option><option>//div[@id='content']/form/div[2]/input</option><option>//div[2]/input</option><option>css=#edit_prof_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div<datalist><option>//div[@id='content']/div</option><option>//div/div/div</option><option>css=div.alert.alert-success</option></datalist></td><td>Le profil a été mis à jour.</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/strong<datalist><option>//div[@id='content']/strong</option><option>//strong</option><option>css=strong</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div[2]/p[2]<datalist><option>//div[@id='content']/div[2]/p[2]</option><option>//p[2]</option></datalist></td><td>Nom d'utilisateur : test26</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div[2]/p[3]<datalist><option>//div[@id='content']/div[2]/p[3]</option><option>//p[3]</option></datalist></td><td>Adresse e-mail : test26@hotmail.com</td>
+</tr>
+<tr><td>click</td><td>link=Modifier mon mot de passe<datalist><option>link=Modifier mon mot de passe</option><option>//a[contains(text(),'Modifier mon mot de passe')]</option><option>//div[@id='content']/div[2]/a[2]</option><option>//a[contains(@href, '/profile/change-password')]</option><option>//a[2]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=fos_user_change_password_form_current_password<datalist><option>id=fos_user_change_password_form_current_password</option><option>name=fos_user_change_password_form[current_password]</option><option>//input[@id='fos_user_change_password_form_current_password']</option><option>//div[@id='fos_user_change_password_form']/div/input</option><option>//input</option><option>css=#fos_user_change_password_form_current_password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_change_password_form_current_password<datalist><option>id=fos_user_change_password_form_current_password</option><option>name=fos_user_change_password_form[current_password]</option><option>//input[@id='fos_user_change_password_form_current_password']</option><option>//div[@id='fos_user_change_password_form']/div/input</option><option>//input</option><option>css=#fos_user_change_password_form_current_password</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>click</td><td>id=fos_user_change_password_form_plainPassword_first<datalist><option>id=fos_user_change_password_form_plainPassword_first</option><option>name=fos_user_change_password_form[plainPassword][first]</option><option>//input[@id='fos_user_change_password_form_plainPassword_first']</option><option>//div[@id='fos_user_change_password_form']/div[2]/input</option><option>//div/div[2]/input</option><option>css=#fos_user_change_password_form_plainPassword_first</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_change_password_form_plainPassword_first<datalist><option>id=fos_user_change_password_form_plainPassword_first</option><option>name=fos_user_change_password_form[plainPassword][first]</option><option>//input[@id='fos_user_change_password_form_plainPassword_first']</option><option>//div[@id='fos_user_change_password_form']/div[2]/input</option><option>//div/div[2]/input</option><option>css=#fos_user_change_password_form_plainPassword_first</option></datalist></td><td>test266</td>
+</tr>
+<tr><td>click</td><td>id=fos_user_change_password_form_plainPassword_second<datalist><option>id=fos_user_change_password_form_plainPassword_second</option><option>name=fos_user_change_password_form[plainPassword][second]</option><option>//input[@id='fos_user_change_password_form_plainPassword_second']</option><option>//div[@id='fos_user_change_password_form']/div[3]/input</option><option>//div[3]/input</option><option>css=#fos_user_change_password_form_plainPassword_second</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_change_password_form_plainPassword_second<datalist><option>id=fos_user_change_password_form_plainPassword_second</option><option>name=fos_user_change_password_form[plainPassword][second]</option><option>//input[@id='fos_user_change_password_form_plainPassword_second']</option><option>//div[@id='fos_user_change_password_form']/div[3]/input</option><option>//div[3]/input</option><option>css=#fos_user_change_password_form_plainPassword_second</option></datalist></td><td>test266</td>
+</tr>
+<tr><td>click</td><td>//input[@value='Envoyer']<datalist><option>//input[@value='Envoyer']</option><option>//div[@id='content']/form/div[2]/input</option><option>//div[2]/input</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div<datalist><option>//div[@id='content']/div</option><option>//div/div/div</option><option>css=div.alert.alert-success</option></datalist></td><td>Le mot de passe a été modifié.</td>
+</tr>
+<tr><td>click</td><td>link=Déconnexion<datalist><option>link=Déconnexion</option><option>//a[contains(text(),'Déconnexion')]</option><option>//div[@id='navbarResponsive']/ul/li[3]/a</option><option>//a[contains(@href, '/logout')]</option><option>//li[3]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//form/div<datalist><option>//form/div</option><option>css=div.mb-2</option></datalist></td><td>Identifiants invalides.</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[3]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[3]/input</option><option>css=#password</option></datalist></td><td>test266</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Mon compte<datalist><option>link=Mon compte</option><option>//a[contains(text(),'Mon compte')]</option><option>//div[@id='navbarResponsive']/ul/li[2]/a</option><option>//a[contains(@href, '/profile/')]</option><option>//li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Modifier mon mot de passe<datalist><option>link=Modifier mon mot de passe</option><option>//a[contains(text(),'Modifier mon mot de passe')]</option><option>//div[@id='content']/div/a[2]</option><option>//a[contains(@href, '/profile/change-password')]</option><option>//a[2]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=fos_user_change_password_form_current_password<datalist><option>id=fos_user_change_password_form_current_password</option><option>name=fos_user_change_password_form[current_password]</option><option>//input[@id='fos_user_change_password_form_current_password']</option><option>//div[@id='fos_user_change_password_form']/div/input</option><option>//input</option><option>css=#fos_user_change_password_form_current_password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_change_password_form_current_password<datalist><option>id=fos_user_change_password_form_current_password</option><option>name=fos_user_change_password_form[current_password]</option><option>//input[@id='fos_user_change_password_form_current_password']</option><option>//div[@id='fos_user_change_password_form']/div/input</option><option>//input</option><option>css=#fos_user_change_password_form_current_password</option></datalist></td><td>test266</td>
+</tr>
+<tr><td>click</td><td>id=fos_user_change_password_form_plainPassword_first<datalist><option>id=fos_user_change_password_form_plainPassword_first</option><option>name=fos_user_change_password_form[plainPassword][first]</option><option>//input[@id='fos_user_change_password_form_plainPassword_first']</option><option>//div[@id='fos_user_change_password_form']/div[2]/input</option><option>//div/div[2]/input</option><option>css=#fos_user_change_password_form_plainPassword_first</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_change_password_form_plainPassword_first<datalist><option>id=fos_user_change_password_form_plainPassword_first</option><option>name=fos_user_change_password_form[plainPassword][first]</option><option>//input[@id='fos_user_change_password_form_plainPassword_first']</option><option>//div[@id='fos_user_change_password_form']/div[2]/input</option><option>//div/div[2]/input</option><option>css=#fos_user_change_password_form_plainPassword_first</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>click</td><td>id=fos_user_change_password_form_plainPassword_second<datalist><option>id=fos_user_change_password_form_plainPassword_second</option><option>name=fos_user_change_password_form[plainPassword][second]</option><option>//input[@id='fos_user_change_password_form_plainPassword_second']</option><option>//div[@id='fos_user_change_password_form']/div[3]/input</option><option>//div[3]/input</option><option>css=#fos_user_change_password_form_plainPassword_second</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=fos_user_change_password_form_plainPassword_second<datalist><option>id=fos_user_change_password_form_plainPassword_second</option><option>name=fos_user_change_password_form[plainPassword][second]</option><option>//input[@id='fos_user_change_password_form_plainPassword_second']</option><option>//div[@id='fos_user_change_password_form']/div[3]/input</option><option>//div[3]/input</option><option>css=#fos_user_change_password_form_plainPassword_second</option></datalist></td><td>test26</td>
+</tr>
+<tr><td>click</td><td>//input[@value='Envoyer']<datalist><option>//input[@value='Envoyer']</option><option>//div[@id='content']/form/div[2]/input</option><option>//div[2]/input</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div<datalist><option>//div[@id='content']/div</option><option>//div/div/div</option><option>css=div.alert.alert-success</option></datalist></td><td>Le mot de passe a été modifié.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test_Admin_Add_NewForumSubject_And_DeleteIt</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8080/login<datalist><option>http://127.0.0.1:8080/login</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td>admin</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td>root</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Accès à l'administration<datalist><option>link=Accès à l'administration</option><option>//div[@id='wf_forum']/p/a</option><option>//a[contains(@href, '/forum/admin')]</option><option>//p/a</option><option>css=a.wf_button</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//nav[@id='mainNav']/div/a<datalist><option>//nav[@id='mainNav']/div/a</option><option>//a[contains(@href, '/forum')]</option><option>//a</option><option>css=a.navbar-brand.js-scroll-trigger</option></datalist></td><td>Forum - admin</td>
+</tr>
+<tr><td>click</td><td>//div[@id='wf_forum_admin']/div/div[2]/a/span<datalist><option>//div[@id='wf_forum_admin']/div/div[2]/a/span</option><option>//a/span</option><option>css=span.wf_add-plus</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=admin_forum_name<datalist><option>id=admin_forum_name</option><option>name=admin_forum[name]</option><option>//input[@id='admin_forum_name']</option><option>//div[@id='wf_forum_admin']/div/form/p[2]/input</option><option>//input</option><option>css=#admin_forum_name</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=admin_forum_name<datalist><option>id=admin_forum_name</option><option>name=admin_forum[name]</option><option>//input[@id='admin_forum_name']</option><option>//div[@id='wf_forum_admin']/div/form/p[2]/input</option><option>//input</option><option>css=#admin_forum_name</option></datalist></td><td>Test</td>
+</tr>
+<tr><td>click</td><td>id=admin_forum_subforum_0_name<datalist><option>id=admin_forum_subforum_0_name</option><option>name=admin_forum[subforum][0][name]</option><option>//input[@id='admin_forum_subforum_0_name']</option><option>//tr[@id='wf_sub_0']/td/input</option><option>//td/input</option><option>css=#admin_forum_subforum_0_name</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=admin_forum_subforum_0_name<datalist><option>id=admin_forum_subforum_0_name</option><option>name=admin_forum[subforum][0][name]</option><option>//input[@id='admin_forum_subforum_0_name']</option><option>//tr[@id='wf_sub_0']/td/input</option><option>//td/input</option><option>css=#admin_forum_subforum_0_name</option></datalist></td><td>test2</td>
+</tr>
+<tr><td>click</td><td>id=admin_forum_submit<datalist><option>id=admin_forum_submit</option><option>name=admin_forum[submit]</option><option>//button[@id='admin_forum_submit']</option><option>//div[@id='wf_forum_admin']/div/form/p[5]/button</option><option>//p[5]/button</option><option>css=#admin_forum_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>link=Test<datalist><option>link=Test</option><option>//a[contains(text(),'Test')]</option><option>//div[@id='wf_forum_admin']/div/div[2]/ul/li[3]/a</option><option>//a[contains(@href, '/forum/admin/forum/edit/3')]</option><option>//div[2]/ul/li[3]/a</option></datalist></td><td>Test</td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='wf_forum_content']/div/ul/li<datalist><option>//div[@id='wf_forum_content']/div/ul/li</option><option>//div/div/div/ul/li</option><option>css=div.alert-success &gt; ul &gt; li</option></datalist></td><td>Enregistrement effectués</td>
+</tr>
+<tr><td>click</td><td>link=← Retour au forum<datalist><option>link=← Retour au forum</option><option>//a[contains(text(),'← Retour au forum')]</option><option>//div[@id='wf_forum_admin']/p/a</option><option>//a[contains(@href, '/forum/')]</option><option>//p/a</option><option>css=a.wf_button</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='wf_forum']/div[3]/h1<datalist><option>//div[@id='wf_forum']/div[3]/h1</option><option>//div[3]/h1</option></datalist></td><td>Test</td>
+</tr>
+<tr><td>assertText</td><td>link=test2<datalist><option>link=test2</option><option>//a[contains(text(),'test2')]</option><option>//div[@id='wf_forum']/div[3]/table/tbody/tr/td/a</option><option>//a[contains(@href, '/forum/view/test/test')]</option><option>//div[3]/table/tbody/tr/td/a</option></datalist></td><td>test2</td>
+</tr>
+<tr><td>click</td><td>link=Accès à l'administration<datalist><option>link=Accès à l'administration</option><option>//div[@id='wf_forum']/p/a</option><option>//a[contains(@href, '/forum/admin')]</option><option>//p/a</option><option>css=a.wf_button</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Test<datalist><option>link=Test</option><option>//a[contains(text(),'Test')]</option><option>//div[@id='wf_forum_admin']/div/div[2]/ul/li[3]/a</option><option>//a[contains(@href, '/forum/admin/forum/edit/4')]</option><option>//div[2]/ul/li[3]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Supprimer ce forum<datalist><option>link=Supprimer ce forum</option><option>//a[contains(text(),'Supprimer ce forum')]</option><option>//a[@onclick="if (!confirm('Êtes vous sûr de vouloir supprimer ce forum ?')) { return false; }"]</option><option>//div[@id='wf_forum_admin']/div[2]/p[5]/a</option><option>//a[contains(@href, '/forum/admin/deleteforum/4')]</option><option>//p[5]/a</option><option>css=a.wf_button.wf_button-red</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://127.0.0.1:8080/forum/<datalist><option>http://127.0.0.1:8080/login</option><option>http://127.0.0.1:8080/forum/</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test_Admin_Show_All_User_And_Delete_User</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8080/login<datalist><option>http://127.0.0.1:8080/login</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td>admin</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td>root</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Accès à l'administration<datalist><option>link=Accès à l'administration</option><option>//div[@id='wf_forum']/p/a</option><option>//a[contains(@href, '/forum/admin')]</option><option>//p/a</option><option>css=a.wf_button</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Liste des utilisateurs web<datalist><option>link=Liste des utilisateurs web</option><option>//a[contains(text(),'Liste des utilisateurs web')]</option><option>//div[@id='wf_forum_admin']/div[3]/div[2]/ul/li/a</option><option>//a[contains(@href, '/profile/allUser')]</option><option>//div[3]/div[2]/ul/li/a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//body[@id='page-top']/div/div/div[2]/div[2]/div/h5<datalist><option>//body[@id='page-top']/div/div/div[2]/div[2]/div/h5</option><option>//div[2]/div/h5</option></datalist></td><td>test</td>
+</tr>
+<tr><td>assertText</td><td>//body[@id='page-top']/div/div/div[2]/div[2]/div/p<datalist><option>//body[@id='page-top']/div/div/div[2]/div[2]/div/p</option><option>//div[2]/div/p</option></datalist></td><td>Nom : test 
+ Email : test@hotmail.com</td>
+</tr>
+<tr><td>click</td><td>xpath=(//a[contains(text(),'Show profil')])[2]<datalist><option>xpath=(//a[contains(text(),'Show profil')])[2]</option><option>//body[@id='page-top']/div/div/div[2]/div[2]/div/a</option><option>xpath=(//a[contains(@href, '/profile/show_prof/3')])[2]</option><option>//div[2]/div[2]/div/a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='content']/div/p[2]<datalist><option>//div[@id='content']/div/p[2]</option><option>//p[2]</option></datalist></td><td>Nom d'utilisateur : test</td>
+</tr>
+<tr><td>click</td><td>xpath=(//a[contains(text(),'Delete profil')])[10]<datalist><option>xpath=(//a[contains(text(),'Delete profil')])[10]</option><option>//body[@id='page-top']/div/div/div[2]/div[10]/div/a[2]</option><option>//a[contains(@href, '/profile/deleteUser/18')]</option><option>//div[10]/div/a[2]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//body[@id='page-top']/div/div<datalist><option>//body[@id='page-top']/div/div</option><option>//body/div/div</option><option>css=div.alert.alert-success</option></datalist></td><td>test70 est bien supprimé.</td>
+</tr>
+<tr><td>click</td><td>link=Déconnexion<datalist><option>link=Déconnexion</option><option>//a[contains(text(),'Déconnexion')]</option><option>//div[@id='navbarResponsive']/ul/li[3]/a</option><option>//a[contains(@href, '/logout')]</option><option>//li[3]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://127.0.0.1:8080/login<datalist><option>http://127.0.0.1:8080/login</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Creer un compte<datalist><option>link=Creer un compte</option><option>//a[contains(text(),'Creer un compte')]</option><option>//div[@id='navbarResponsive']/ul/li[2]/a</option><option>//a[contains(@href, '/registera')]</option><option>//li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=appbundle_user_username<datalist><option>id=appbundle_user_username</option><option>name=appbundle_user[username]</option><option>//input[@id='appbundle_user_username']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[2]/input</option><option>//div[2]/input</option><option>css=#appbundle_user_username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=appbundle_user_username<datalist><option>id=appbundle_user_username</option><option>name=appbundle_user[username]</option><option>//input[@id='appbundle_user_username']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[2]/input</option><option>//div[2]/input</option><option>css=#appbundle_user_username</option></datalist></td><td>test70</td>
+</tr>
+<tr><td>click</td><td>id=appbundle_user_email<datalist><option>id=appbundle_user_email</option><option>name=appbundle_user[email]</option><option>//input[@id='appbundle_user_email']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div/input</option><option>//div[2]/div/input</option><option>css=#appbundle_user_email</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=appbundle_user_email<datalist><option>id=appbundle_user_email</option><option>name=appbundle_user[email]</option><option>//input[@id='appbundle_user_email']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div/input</option><option>//div[2]/div/input</option><option>css=#appbundle_user_email</option></datalist></td><td>test70@gmail.com</td>
+</tr>
+<tr><td></td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=appbundle_user_plainPassword_first<datalist><option>id=appbundle_user_plainPassword_first</option><option>name=appbundle_user[plainPassword][first]</option><option>//input[@id='appbundle_user_plainPassword_first']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[3]/input</option><option>//div[3]/input</option><option>css=#appbundle_user_plainPassword_first</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=appbundle_user_plainPassword_first<datalist><option>id=appbundle_user_plainPassword_first</option><option>name=appbundle_user[plainPassword][first]</option><option>//input[@id='appbundle_user_plainPassword_first']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[3]/input</option><option>//div[3]/input</option><option>css=#appbundle_user_plainPassword_first</option></datalist></td><td>test70</td>
+</tr>
+<tr><td>click</td><td>id=appbundle_user_plainPassword_second<datalist><option>id=appbundle_user_plainPassword_second</option><option>name=appbundle_user[plainPassword][second]</option><option>//input[@id='appbundle_user_plainPassword_second']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[4]/input</option><option>//div[4]/input</option><option>css=#appbundle_user_plainPassword_second</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=appbundle_user_plainPassword_second<datalist><option>id=appbundle_user_plainPassword_second</option><option>name=appbundle_user[plainPassword][second]</option><option>//input[@id='appbundle_user_plainPassword_second']</option><option>//body[@id='page-top']/div/div/form/div[2]/div/div[2]/div[4]/input</option><option>//div[4]/input</option><option>css=#appbundle_user_plainPassword_second</option></datalist></td><td>test70</td>
+</tr>
+<tr><td>click</td><td>id=appbundle_user_submit<datalist><option>id=appbundle_user_submit</option><option>name=appbundle_user[submit]</option><option>//button[@id='appbundle_user_submit']</option><option>//body[@id='page-top']/div/div/form/div[3]/div/button</option><option>//div[3]/div/button</option><option>css=#appbundle_user_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td>test70</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td>test70</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test_Admin_Access_EasyAdmin</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8080/login<datalist><option>http://127.0.0.1:8080/login</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=username<datalist><option>id=username</option><option>name=_username</option><option>//input[@id='username']</option><option>//div/input</option><option>css=#username</option></datalist></td><td>admin</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=_password</option><option>//input[@id='password']</option><option>//div[2]/input</option><option>css=#password</option></datalist></td><td>root</td>
+</tr>
+<tr><td>click</td><td>id=_submit<datalist><option>id=_submit</option><option>name=_submit</option><option>//input[@id='_submit']</option><option>//input[2]</option><option>css=#_submit</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Accès à l'administration<datalist><option>link=Accès à l'administration</option><option>//div[@id='wf_forum']/p/a</option><option>//a[contains(@href, '/forum/admin')]</option><option>//p/a</option><option>css=a.wf_button</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Easyadmin<datalist><option>link=Easyadmin</option><option>//a[contains(text(),'Easyadmin')]</option><option>//div[@id='wf_forum_admin']/div[3]/div[2]/ul/li[2]/a</option><option>xpath=(//a[contains(@href, '/admin/')])[5]</option><option>//div[3]/div[2]/ul/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//section[@id='main']/div[2]/div/div[2]/ul/li[4]/a/i<datalist><option>//section[@id='main']/div[2]/div/div[2]/ul/li[4]/a/i</option><option>//div[2]/ul/li[4]/a/i</option><option>css=i.fa.fa-angle-double-right</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//section[@id='main']/div/table/tbody/tr/td/span<datalist><option>//section[@id='main']/div/table/tbody/tr/td/span</option><option>//td/span</option><option>css=span[title="admin"]</option></datalist></td><td>admin</td>
+</tr>
+</tbody></table>
+</body>
+</html>

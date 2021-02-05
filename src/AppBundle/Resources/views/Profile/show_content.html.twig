@@ -1,23 +1,26 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <div class="fos_user_user_show">
-
+<div class="card">
+  <div class="card-header">
+   <p><strong>{{ 'profile.show.username'|trans }} :</strong> {{ user.username }}</p>
+  </div>
+  <div class="card-body">
     {% if user.imageName is not empty %}
         <p><img id="photo_profil" src="{{ asset('/images/Avatar/'~user.imageName) }}" alt="photo de profil" width="100"/></p>
     {% else %}
         <p><img id="photo_profil" src="{{ asset('/image/avatar/default.png') }}" alt="photo de profil" width="100"/></p>
     {% endif %}
-
-    <p><strong>{{ 'profile.show.username'|trans }} :</strong> {{ user.username }}</p>
-    <p><strong>{{ 'profile.show.email'|trans }} :</strong> {{ user.email }}</p>
+<p><strong>{{ 'profile.show.email'|trans }} :</strong> {{ user.email }}</p>
 
     {% if user.nbPost is not empty %}
         <p><strong>Nombre de Posts :</strong> {{ user.nbPost }}</p>
     {% else %}
         <p><strong>Nombre de Posts :</strong> L'utilisateur n'a pas encore écrit de post.</p>
     {% endif %}
+     <a class="class_button btn btn-primary" href={{ path('fos_user_profile_edit') }}>Modifier mon profil</a>
+    <a class="class_button btn btn-primary" href={{ path('fos_user_change_password') }}>Modifier mon mot de passe</a>
+  </div>
+</div>
 
-
-    <a class="class_button" href={{ path('fos_user_profile_edit') }}>Modifier mon profil</a>
-    <a class="class_button" href={{ path('fos_user_change_password') }}>Modifier mon mot de passe</a>
 </div>

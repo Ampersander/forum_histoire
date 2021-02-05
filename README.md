@@ -11,6 +11,9 @@ application that you can use as the skeleton for your new applications.
 For details on how to download and get started with Symfony, see the
 [Installation][1] chapter of the Symfony Documentation.
 
+Php=7.3.21
+Symfony= 3.4.37
+
 What's inside?
 --------------
 
@@ -75,3 +78,59 @@ Enjoy!
 [13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
 [14]: https://symfony.com/doc/current/setup/built_in_web_server.html
 [15]: https://symfony.com/doc/current/setup.html
+
+Functionalities
+--------------
+
+#Connection Multi-User Admin, Member and Visitor (In future Moderator)
+
+The visitor have access of the entire forum but he can't post anything.
+The member can post an create new Thread.
+The administrator can manage user and forum by different Interface.
+
+#Creation of account
+
+A visitor can create a new account to have access of the forum.
+They need to inform different data like the username, mail and the password.
+The possibity to have an avatar is possible during process of the account creation.
+In the current version, it is not possible to change the image after the creation.
+
+#My account
+
+All User can see the username, mail and the number of posts of their accounts.
+Also they can modify the username, mail and the password.
+
+#Search
+
+The possibility to search a keyword in subForum subject had be implement.
+
+#Admin Interface
+
+Administration du Forum(Réglages)
+
+In the main interface of administration we can see differents parameters uses by the Bundle of the forum. To modify parameters we need to access to the app/config/config.yaml file and change variable in yosimitso_working_forum:
+
+
+Gestion des forums
+The first interface permit to manage the forum with the creation of new forum Subject with their Sub forum subject. It is also possible in this interface to delete a forum Subject or to change their rule of access.
+
+Gestion des utilisateurs
+
+In this party we have 3 differents Interface to manage the entire forum.
+The first one "Liste des utilisateurs web" permit to manage user of the forum. 
+It is possible to delete or to see all users account.
+
+In the second interface, it is the bundle EasyAdmin with his interface with that we see others data of the user account and manage them.
+
+In the third interface, we can handle the signalement of post and see the history.
+
+#Test
+
+It is possible to install the extension to do the test, you need to import in the extension the file Test_Forum_Katalon.html
+
+* [**KatalonRecorder**][13] Chrome xtension for tests
+
+The others possibility is to use JUnit on Java to make tests.
+
+[16]:  https://chrome.google.com/webstore/detail/katalon-recorder-selenium/ljdobmomdgdljniojadhoplhkpialdid
+
